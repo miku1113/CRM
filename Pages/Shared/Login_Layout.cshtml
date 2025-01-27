@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MyApp</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #007BFF, #4B79A1); /* Gradient blue tones */
+            height: 100vh; /* Full viewport height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        .content {
+            width: 65%; /* Reduced size to 65% of the viewport width */
+            max-width: 400px; /* Restricting maximum width for smaller screens */
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.15); /* Semi-transparent white */
+            backdrop-filter: blur(15px); /* Blurred glass effect */
+            border-radius: 20px; /* Rounded corners */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Soft shadow */
+            text-align: center;
+        }
+
+        h1, p {
+            margin: 0 0 20px;
+        }
+
+        /* Optional: Adding a subtle animated background effect */
+        body::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
+            animation: moveBackground 10s infinite;
+            z-index: -1;
+        }
+
+        /* Centering the login container */
+        .login-container {
+            text-align: center;
+            margin: 20px auto;
+        }
+
+            .login-container h1 {
+                margin-bottom: 20px;
+                font-size: 2rem;
+            }
+
+            .login-container p {
+                margin-bottom: 30px;
+                font-size: 1rem;
+                color: #dcdcdc;
+            }
+
+        /* Styling the login form */
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* Input fields with icons */
+        .input-group {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+            .input-group input {
+                width: 100%;
+                padding: 10px 10px 10px 40px; /* Leave space for the icon */
+                font-size: 1rem;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                background: rgba(255, 255, 255, 0.8);
+                outline: none;
+            }
+
+                .input-group input:focus {
+                    border-color: #007bff;
+                    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+                }
+
+        .input-icon {
+            position: absolute;
+            left: 10px;
+            color: #007bff;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Submit button styling */
+        .submit-btn {
+            padding: 10px;
+            font-size: 1rem;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+            .submit-btn:hover {
+                background-color: #0056b3;
+            }
+
+    </style>
+
+</head>
+<body>
+    <div class="content">
+        @RenderBody() <!-- This renders the content of the individual page -->
+    </div>
+</body>
+</html>
